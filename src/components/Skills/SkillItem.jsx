@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import '../../assets/styles/Skills.scss'
@@ -8,7 +8,7 @@ const SkillItem = ({ targetValue, skill }) => {
   
   useEffect(() => {
     loadPercent()
-  }, [targetValue]);
+  }, []);
   
   
   const Typewriter = ({ toPercent, setPercent }) => {

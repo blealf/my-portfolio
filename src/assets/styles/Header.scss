@@ -16,10 +16,17 @@
     align-items: center;
     list-style: none;
     margin-right: 1rem;
+    border-bottom: 1px solid transparent;
+    transition: border 0.9s ease-in-out;
     li {
-      padding: 0 0.5rem;
+      margin: 0 0.5rem;
+      padding-bottom: 5px;
       font-size: 1rem;
       font-weight: 400;
+      cursor: pointer;
+      &:hover {
+        border-bottom: 1px solid #975c5c;
+      }
     }
     @include breakpoint('sm') {
       display: none;

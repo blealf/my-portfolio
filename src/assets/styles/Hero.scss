@@ -1,11 +1,15 @@
+@import "./Global.scss";
+
 .hero {
   padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
   &__left {
     max-width: 500px;
     padding: 20px;
+    margin-right: auto;
   }
   &__header {
     background: linear-gradient(to right, #975c5c, rgb(92, 60, 90));
@@ -80,33 +84,31 @@
 
 // CODE
 .code-wrapper {
-  width: 300px;
-  height: 300px;
-  border: 3px solid #975c5c;
-  border-radius: 50%;
-  animation: beamOut 4s linear infinite;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  position: relative;
+  @include breakpoint('md') {
+    display: none;
+  }
 }
 .code-image {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   margin-bottom: 1rem;
   position: relative;
-  animation: spin 40s linear infinite;
+  position: absolute;
   &:hover {
     animation-play-state: paused;
   }
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -20px;
-    width: 100px;
-    height: 20px;
-    background: linear-gradient(to right, #975c5c, rgb(92, 60, 90));
-    border-radius: 2px;
-    opacity: 0.5;
-  }
+}
+.code-left {
+  animation: counter-spin 180s linear infinite;
+  left: -50px;
+}
+.code-right {
+  animation: spin 180s linear infinite;
 }
 
 @keyframes spin {
@@ -117,14 +119,11 @@
     transform: rotate(360deg);
   }
 }
-@keyframes beamOut {
+@keyframes counter-spin {
   0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
+    transform: rotate(0deg);
   }
   100% {
-    transform: scale(1);
+    transform: rotate(-360deg);
   }
 }

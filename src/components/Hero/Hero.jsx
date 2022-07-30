@@ -14,7 +14,7 @@ const Hero = () => {
     write()
   }, [])
 
-  const Typewriter = ({ words, printer, setBlinker, blinkerTime }) => {
+  const Typewriter = ({ words, printer, setBlinker, blinkerTime, writeTime }) => {
   let i = 0
   // eslint-disable-next-line no-unused-expressions
   setBlinker ? setBlinker(true) : null
@@ -32,30 +32,42 @@ const Hero = () => {
           }
           printer(words.slice(0, i + 1))
           i++
-        }, 200)
+        }, writeTime || 200)
       }, 1000)
     })
   }
   
   const write = () => {
+    const title = 'Hi, my name is Blessing Alfred'
+    const subTitle = 'I am a full stack developer'
+    const body = `Knowledgeable, goal-oriented and a solutions-oriented 
+      developer adept at creating successful web applications that
+      meet customer needs. Use various web design packages and development
+      frameworks to curate custom-crafted, customer-focused web applications.
+      Committed to high standards of user experience, usability and speed.`
     Typewriter({
-      words: 'Hi, my name is Blessing Alfred',
+      words: `<h1> ${title} </h1>`,
       words2: 'Hi, I am Blessing Alfred',
       rewrite: true,
       printer: setGreeting,
       setBlinker: setBlinkGreeting
     }).then(() => {
       Typewriter({
-        words: 'I am a front-end developer',
+        words: `<p> ${subTitle} </p>`,
         printer: setWork,
         setBlinker: setBlinkWork,
         blinkerTime: 3000
       }).then(() => {
-        setSummary(`Knowledgeable, goal-oriented and a solutions-oriented 
-      developer adept at creating successful web applications that
-      meet customer needs. Use various web design packages and development
-      frameworks to curate custom-crafted, customer-focused web applications.
-      Committed to high standards of user experience, usability and speed.`)
+        Typewriter({
+          words: `<small> ${body} </small>`,
+          printer: setSummary,
+          blinkerTime: 3000,
+          writeTime: 20,
+        }).then(() => {
+          setGreeting(title)
+          setWork(subTitle)
+          setSummary(body)
+        })
       })
     })
   }
