@@ -9,16 +9,13 @@ const LinearProgress = ({ value }) => {
   const mainWidth = 200
 
   useEffect(() => {
-    loadPercent()
-  }, []);
-  
-  const loadPercent = () => {
     setIsLoading(true)
     delayedLoader({
       toPercent: value,
       setPercent: setPercentage,
     }).then(() => {setIsLoading(false)})
-  }
+  }, [value]);
+  
   const getProgress = () => {
     return (percentage/100) * mainWidth
   }

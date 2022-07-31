@@ -10,6 +10,10 @@
     text-transform: uppercase;
     margin-right: auto;
     font-family: var(--logo-font);
+    a {
+      text-decoration: none;
+      color: var(--text-color);
+    }
   }
   &__link {
     display: flex;
@@ -25,6 +29,10 @@
       font-size: 1rem;
       font-weight: 400;
       cursor: pointer;
+      a {
+        text-decoration: none;
+        color: var(--text-color);
+      }
       &:hover {
         border-bottom: 1px solid #975c5c;
       }

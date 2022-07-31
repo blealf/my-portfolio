@@ -8,15 +8,11 @@ const SkillItem = ({ targetValue, skill }) => {
   const [percentage, setPercentage] = useState(0);
   
   useEffect(() => {
-    loadPercent()
-  }, []);
-  
-  const loadPercent = () => {
     delayedLoader({
       toPercent: targetValue,
       setPercent: setPercentage,
     }).then(() => {console.log('HURRAY!!!')})
-  }
+  }, [targetValue]);
 
   return (
     <div className="skill-item">
