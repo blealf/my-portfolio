@@ -2,15 +2,17 @@ import React from 'react'
 import SkillItem from './SkillItem'
 const Skills = () => {
   return (
-    <div className="skills">
-      <div className="skills__items">
-        {skills.map(skill => (
-          <SkillItem
-            key={skill.name}
-            skill={skill.name}
-            targetValue={skill.target}
-          />
-        ))}
+    <div className="skills-wrapper">
+      <div className="skills">
+        <div className="skills__items">
+          {skills.map(skill => (
+            <SkillItem
+              key={skill.name}
+              skill={skill.name}
+              targetValue={skill.target}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )

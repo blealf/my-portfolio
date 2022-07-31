@@ -1,0 +1,17 @@
+.linear-progress {
+  border: 1px solid #975c5c;
+  height: 12px;
+  border-radius: 2px;
+  &__bar {
+    background: #975c5c;
+    height: 100%;
+    border-radius: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 0.8rem;
+      color: var(--main-color);
+    }
+  }
+}

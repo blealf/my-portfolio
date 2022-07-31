@@ -1,7 +1,7 @@
 @import "./Global.scss";
 
 .header {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,6 +9,7 @@
     font-weight: 700;
     text-transform: uppercase;
     margin-right: auto;
+    font-family: var(--logo-font);
   }
   &__link {
     display: flex;
