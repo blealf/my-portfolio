@@ -1,0 +1,67 @@
+.resume {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  &__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background: rgb(19,19,19);
+    padding: 2rem 1rem;
+    border-radius: 10px;
+  }
+  &__picture {
+    width: 150px;
+    height: 150px;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 8px solid var(--alt-color1);
+    }
+  }
+  &__info {
+    min-width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 2rem;
+      text-transform: uppercase;
+      &:nth-of-type(2) {
+        letter-spacing: 5px;
+      }
+    }
+    h3 {
+      margin-top: 5px;
+    }
+  }
+  &__link {
+    margin-top: -15px;
+    min-width: 170px;
+    padding: 10px;
+  }
+  &__contact {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    span {
+      margin-right: 10px;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+      color: var(--text-color);
+    }
+  }
+}
